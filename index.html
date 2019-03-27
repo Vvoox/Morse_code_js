@@ -7,19 +7,19 @@
     <script src="js/script.js"></script>
 </head>
 
-<body onload="txt()">
+<body onload="init()">
     <form name="fofo">
         <br /><br />
-        <div>Your Text</div>
+        <div>Your Plain Text</div>
         <br />
-        <textarea type="text" name="input_message" cols="30" rews="30" class="txtone" /></textarea>
+        <textarea type="text" name="input_message" cols="30" rews="30" class="txtone" onkeyup="input_msg()" /></textarea>
         <br /><br /><br /><br />
         <br />
-        <button onclick="txt()">Valider</button>
+        <button onclick="morse()" >Valider</button>
         <br /><br /><br />
         <div>Morse Code</div>
         <br />
-        <textarea type="text" name="output_morse" cols="30" rews="50" class="txttwo" id="output" readonly/></textarea>
+        <textarea type="text" name="output_message" cols="30" rews="50" class="txtone" readonly/></textarea>
 
     </form>
 </body>
