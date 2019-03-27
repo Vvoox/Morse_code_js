@@ -1,8 +1,22 @@
-function txt() {
-    //tt = document.fofo.fo1.value;
-    //alert("javascript is working")
-    morse_size=document.fofo.input_message.value.length;
-    morse_content=document.fofo.input_message.value;
+function input_msg(){
+  morse_size1=document.fofo.input_message.value.length;
+  morse_content1=document.fofo.input_message.value;
+  input_valide = new RegExp("^[a-zA-Z0-9]{4,16}");
+  if (morse_size>0){
+    if(input_valide.test(morse_content1)){
+      document.getElementsByTagName('textarea').item(0).className='txttwo';
+    }
+    else{
+    document.getElementsByTagName('textarea').item(0).className='txt3';  }
+  }
+  else{
+    break;
+  }
+
+}
+function morse() {
+  morse_size=document.fofo.input_message.value.length;
+  morse_content=document.fofo.input_message.value;
     /*biblo={ 'A':'.-', 'B':'-...',
                         'C':'-.-.', 'D':'-..', 'E':'.',
                         'F':'..-.', 'G':'--.', 'H':'....',
@@ -19,26 +33,52 @@ function txt() {
                         '?':'..--..', '/':'-..-.', '-':'-....-',
                         '(':'-.--.', ')':'-.--.-'}*/
    var message1 = 'N';
-   var message2 = '-.';
-   var cipher='';
-   document.fofo.output_morse.value= "message2";
+   var message2 = [];
+   for ( var j = 0 ; j<morse_size ; j++){
 
+        j=morse_content;
+        message2 += j;
 
-    if(morse_size>0){
+        for(var i=0 ; i<morse_size ; i++){
+
+            if(message2[i] =='N'){
+
+                message2[i]='KHALIL';
+                document.fofo.output_message.value = morse_content;
+                alert("there s N")
+  }
+            else {
+                 document.fofo.output_message.value = morse_content;}
+      }
+}
+}
+function init(){
+  morse();
+  input_msg();
+}
+
+/*function output(){
+  morse_content2=document.fofo.output_message.value;
+  morse_size2=document.fofo.output_message.value.length;
+  if(morse_size2>0){
+    document.getElementsByTagName('textarea').item(1).className='txttwo';
+
+  }
+  else{
+    document.getElementsByTagName('textarea').item(1).className='txt3';
+
+  }
+*/
+
       //message=document.getElementsByTagName('textarea').item(0)
       //sii = message.size( )
-      for (var i=0 ; i<morse_size ; i++){
+  /*    for (var i=0 ; i<morse_size ; i++){
         if (morse_content == message1 ) {
+          alert("test");
 
 
-          //message2='-.';
+
            }
       }
 
-    }
-
-
-}
-function init(){
-  txt();
-}
+    }*/
