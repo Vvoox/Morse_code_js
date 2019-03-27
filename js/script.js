@@ -1,19 +1,17 @@
 function input_msg(){
   morse_size1=document.fofo.input_message.value.length;
   morse_content1=document.fofo.input_message.value;
-  input_valide = new RegExp("^[a-zA-Z0-9]{4,16}");
-  if (morse_size>0){
+  input_valide = new RegExp("^[a-zA-Z0-9]");
+  if (morse_size1>0){
     if(input_valide.test(morse_content1)){
       document.getElementsByTagName('textarea').item(0).className='txttwo';
     }
-    else{
+   else{
     document.getElementsByTagName('textarea').item(0).className='txt3';  }
   }
-  else{
-    break;
-  }
-
 }
+
+
 function morse() {
   morse_size=document.fofo.input_message.value.length;
   morse_content=document.fofo.input_message.value;
@@ -53,7 +51,6 @@ function morse() {
 }
 }
 function init(){
-  morse();
   input_msg();
 }
 
